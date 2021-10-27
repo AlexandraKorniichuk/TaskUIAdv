@@ -4,12 +4,18 @@ public class MouseLook : MonoBehaviour {
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     float rotationX = 0f;
+    private bool freezeCamera = false;
+
+    public GameObject storeUI;
+    public GameObject gameUI;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update() {
-        MoveCamera();
+        if (!freezeCamera)
+            MoveCamera();
+        ChangeStoreStatus();
     }
     private void MoveCamera() {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -19,5 +25,18 @@ public class MouseLook : MonoBehaviour {
 
         transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+    }
+
+    private void ChangeStoreStatus() {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if (storeUI.activeSelf == true) {
+                Cursor.lockState = CursorLockMode.Locked;
+            } else {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            storeUI.SetActive(!storeUI.activeSelf);
+            gameUI.SetActive(!gameUI.activeSelf);
+            freezeCamera = !freezeCamera;
+        }
     }
 }
