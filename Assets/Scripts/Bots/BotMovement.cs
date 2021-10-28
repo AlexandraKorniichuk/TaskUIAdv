@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
 public class BotMovement : MonoBehaviour {
-    public GameObject player;
+    private GameObject player;
     public float speed = 4f;
-
+    private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     void Update() {
         transform.LookAt(player.transform);
         transform.position += transform.forward * Time.deltaTime * speed;

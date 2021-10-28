@@ -31,8 +31,10 @@ public class MouseLook : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (storeUI.activeSelf == true) {
                 Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
             } else {
                 Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
             }
             storeUI.SetActive(!storeUI.activeSelf);
             gameUI.SetActive(!gameUI.activeSelf);
