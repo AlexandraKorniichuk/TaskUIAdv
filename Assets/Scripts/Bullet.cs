@@ -2,8 +2,7 @@
 
 public class Bullet : MonoBehaviour {
     private GameObject player;
-    private float force = 100f;
-    private float damageBullet;
+    private float force = 5000f;
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -20,7 +19,6 @@ public class Bullet : MonoBehaviour {
         Ray ray = new Ray();
         if (player.GetComponentInChildren<MouseLook>() != null) {
             GameObject playerCamera = player.GetComponentInChildren<MouseLook>().gameObject;
-
             ray.origin = playerCamera.transform.position;
             ray.direction = playerCamera.transform.forward;
         } else {
@@ -33,14 +31,10 @@ public class Bullet : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision collision) {
         GameObject Target = collision.gameObject;
-        if (Target != GameObject.FindGameObjectWithTag("Player") && Target != GameObject.FindGameObjectWithTag("MainCamera")) {
+        if (Target == GameObject.FindGameObjectWithTag("Robot")) {
             Destroy(Target);
+            DestroyBullet();
         }
-
-        if (Target.GetComponent<Health>() != null) {
-            Target.GetComponent<Health>().ReceiveDamage(damageBullet);
-        }
-        DestroyBullet();
     }
 
     private void DestroyBullet() {

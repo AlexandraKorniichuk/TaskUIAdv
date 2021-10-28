@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
 
 public class Shooting : MonoBehaviour {
-    private GameObject prefabOfBullet;
-    private void Awake() {
-        prefabOfBullet = GameObject.FindGameObjectWithTag("Bullet");
-    }
+    public GameObject prefabOfBullet;
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            //ShootByBullet();
+            ShootByBullet();
         }
     }
 

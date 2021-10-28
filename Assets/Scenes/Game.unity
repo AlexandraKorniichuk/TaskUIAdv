@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.7
+      value: 87.71
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2057,24 +2057,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322056635}
   m_CullTransparentMesh: 0
---- !u!1 &1366274346 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3225834610412469286, guid: f9cfd13d5a068fc45acf71452202369b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3225834609990340951}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1366274352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366274346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6984f9c941fb55741b27d46ea3b36a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1385859030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,7 +2483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2509,7 +2491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.5
+      value: 25.3
       objectReference: {fileID: 0}
     - target: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2567,6 +2549,20 @@ CapsuleCollider:
   m_Height: 3.8168356
   m_Direction: 1
   m_Center: {x: 6, y: 0.002750516, z: 4.5}
+--- !u!114 &1645301818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645301813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6984f9c941fb55741b27d46ea3b36a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabOfBullet: {fileID: 7056797977705347809, guid: db6d95a88c90deb47b4481382bb3b3bb,
+    type: 3}
 --- !u!1001 &1649626902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3348,7 +3344,7 @@ PrefabInstance:
     - target: {fileID: 3225834610463125011, guid: f9cfd13d5a068fc45acf71452202369b,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3225834610821462902, guid: f9cfd13d5a068fc45acf71452202369b,
         type: 3}
