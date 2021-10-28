@@ -4,10 +4,10 @@ public class MouseLook : MonoBehaviour {
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     float rotationX = 0f;
-    private bool freezeCamera = false;
-
+    public bool freezeCamera = false;
     public GameObject storeUI;
     public GameObject gameUI;
+    private Store storeScript;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -26,8 +26,7 @@ public class MouseLook : MonoBehaviour {
         transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
     }
-
-    private void ChangeStoreStatus() {
+    public void ChangeStoreStatus() {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (storeUI.activeSelf == true) {
                 Cursor.lockState = CursorLockMode.Locked;

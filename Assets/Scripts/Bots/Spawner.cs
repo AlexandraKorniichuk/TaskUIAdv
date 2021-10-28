@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-    private float timeBetweenSpawning = 10f;
+    private float timeBetweenSpawning = 3f;
     public GameObject robotPrefab;
 
     void Start() {

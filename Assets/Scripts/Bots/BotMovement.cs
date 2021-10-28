@@ -2,7 +2,7 @@
 
 public class BotMovement : MonoBehaviour {
     private GameObject player;
-    private float speed = 8f;
+    private float speed = 15f;
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
     }

@@ -2,13 +2,13 @@
 
 public class Bullet : MonoBehaviour {
     private GameObject player;
-    private GameObject scoreCounter;
+    private Score scoreScript;
     private float force = 5000f;
-    public GameObject gameUI;
+    private GameCanvas gameCanvasScript;
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
-        scoreCounter = GameObject.Find("ScoreCounter");
-        gameUI = GameObject.Find("GameUI");
+        scoreScript = GameObject.Find("ScoreCounter").GetComponent<Score>();
+        gameCanvasScript = GameObject.Find("GameUI").GetComponent<GameCanvas>();
     }
     private void Start() {
         Physics.IgnoreCollision(player.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -35,12 +35,12 @@ public class Bullet : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision collision) {
         GameObject Target = collision.gameObject;
-        if (Target == GameObject.FindGameObjectWithTag("Robot")) {
-            scoreCounter.GetComponent<Score>().ChangeScore();
-            gameUI.GetComponent<GameCanvas>().ShowKillInfo();
+        if (Target.tag == "Robot") {
+            scoreScript.ChangeScore();
+            gameCanvasScript.ShowKillInfo();
             Destroy(Target);
             DestroyBullet();
-        } else if (Target == GameObject.FindGameObjectWithTag("Terrain")) {
+        } else if (Target.tag == "Terrain") {
             DestroyBullet();
         }
     }
