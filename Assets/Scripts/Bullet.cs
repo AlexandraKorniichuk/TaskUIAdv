@@ -4,9 +4,11 @@ public class Bullet : MonoBehaviour {
     private GameObject player;
     private GameObject scoreCounter;
     private float force = 5000f;
+    public GameObject gameUI;
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
         scoreCounter = GameObject.Find("ScoreCounter");
+        gameUI = GameObject.Find("GameUI");
     }
     private void Start() {
         Physics.IgnoreCollision(player.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -35,6 +37,7 @@ public class Bullet : MonoBehaviour {
         GameObject Target = collision.gameObject;
         if (Target == GameObject.FindGameObjectWithTag("Robot")) {
             scoreCounter.GetComponent<Score>().ChangeScore();
+            gameUI.GetComponent<GameCanvas>().ShowKillInfo();
             Destroy(Target);
             DestroyBullet();
         } else if (Target == GameObject.FindGameObjectWithTag("Terrain")) {

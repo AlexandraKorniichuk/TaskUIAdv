@@ -1662,7 +1662,7 @@ GameObject:
   - component: {fileID: -4447678690406536211}
   - component: {fileID: -2400561305268601145}
   m_Layer: 0
-  m_Name: Robot Kyle
+  m_Name: Robot
   m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
