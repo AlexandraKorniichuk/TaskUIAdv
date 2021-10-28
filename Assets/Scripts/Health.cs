@@ -2,23 +2,27 @@
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
-    public float CurrentHealth { get; private set; }
-    private float MaxHealth = 100f;
-    private string dieText;
+    public float currentHealth { get; private set; }
+    private float MaxHealth = 1000f;
+    private HealthText healthText;
 
     private void Start() {
-        CurrentHealth = MaxHealth;
+        healthText = GetComponent<HealthText>();
+        currentHealth = MaxHealth;
+        healthText.ChangeHealthText(currentHealth);
     }
 
-    public void ReceiveDamage(float IncomingDamage) {
-        CurrentHealth -= IncomingDamage;
-        if (CurrentHealth <= 0) {
+    public void ReceiveDamage(float incomingDamage) {
+        currentHealth -= incomingDamage;
+        healthText.ChangeHealthText(currentHealth);
+        if (currentHealth <= 0) {
             Die();
         }
     }
 
     private void Die() {
-        dieText = "They killed you";
+        Score score = GetComponent<Score>();
+        score.SaveScore();
         SceneManager.LoadScene("EndGame");
     }
 }

@@ -10,9 +10,4 @@ public class BotMovement : MonoBehaviour {
         transform.LookAt(player.transform);
         transform.position += transform.forward * Time.deltaTime * speed;
     }
-    public void ChangeSpeed(float influxCounter) {
-        if (influxCounter % 3 == 0) {
-            speed += 3f;
-        }
-    }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Robot
+  - Terrain
   layers:
   - Default
   - TransparentFX

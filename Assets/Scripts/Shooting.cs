@@ -10,10 +10,5 @@ public class Shooting : MonoBehaviour {
 
     private void ShootByBullet() {
         GameObject bullet = Instantiate(prefabOfBullet, transform.position, transform.rotation);
-        //Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        //if (rb != null) {
-        //    Vector3 ShootDirection = Vector3.forward;
-        //    rb.AddForce(ShootDirection.normalized);
-        //}
     }
 }

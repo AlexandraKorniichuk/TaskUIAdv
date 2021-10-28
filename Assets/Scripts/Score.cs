@@ -1,16 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Score : MonoBehaviour
-{
-    public float score;
-    void Start()
-    {
-        
+public class Score : MonoBehaviour {
+    private float score = 0f;
+    private ScoreText scoreText;
+    private void Awake() {
+        if (!PlayerPrefs.HasKey("Score")) {
+            PlayerPrefs.SetFloat("Score", score);
+        } else {
+            score = PlayerPrefs.GetFloat("Score");
+        }
+        scoreText = GetComponent<ScoreText>();
+        scoreText.ChangeScoreText(score);
     }
-    void Update()
-    {
-        
+    public void ChangeScore() {
+        score++;
+        scoreText.ChangeScoreText(score);
+    }
+
+    public void SaveScore() {
+        PlayerPrefs.SetFloat("Score", score);
     }
 }
