@@ -21,7 +21,8 @@ public class Health : MonoBehaviour {
     }
 
     private void Die() {
-        Score score = GetComponent<Score>();
+        GameObject scoreCounter = GameObject.Find("ScoreCounter");
+        Score score = scoreCounter.GetComponent<Score>();
         score.SaveScore();
         SceneManager.LoadScene("EndGame");
     }

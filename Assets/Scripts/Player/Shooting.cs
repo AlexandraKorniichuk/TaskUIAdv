@@ -2,9 +2,12 @@
 
 public class Shooting : MonoBehaviour {
     public GameObject prefabOfBullet;
+    public GameObject storeUI;
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            ShootByBullet();
+        if (!storeUI.activeSelf) {
+            if (Input.GetMouseButtonDown(0)) {
+                ShootByBullet();
+            }
         }
     }
 
