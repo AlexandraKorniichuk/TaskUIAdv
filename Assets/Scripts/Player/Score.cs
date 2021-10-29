@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class Score : MonoBehaviour {
-    private float score = 0f;
+    public float score = 0f;
     private ScoreText scoreText;
     private void Awake() {
         if (!PlayerPrefs.HasKey("Score")) {
@@ -9,7 +9,9 @@ public class Score : MonoBehaviour {
         } else {
             score = PlayerPrefs.GetFloat("Score");
         }
-        scoreText = GetComponent<ScoreText>();
+        scoreText = GameObject.Find("ScoreText").GetComponent<ScoreText>();
+    }
+    private void Start() {
         scoreText.ChangeScoreText(score);
     }
     public void ChangeScore() {

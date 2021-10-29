@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
     public float currentHealth { get; private set; }
-    private float MaxHealth = 1000f;
+    private float MaxHealth = 100f;
     private HealthText healthText;
 
     private void Start() {
