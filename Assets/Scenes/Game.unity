@@ -1188,7 +1188,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 911907999}
     - target: {fileID: 3462063575554391811, guid: bd67e8eaa421a1f42bd8b1bb10244828,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1402,6 +1402,7 @@ GameObject:
   - component: {fileID: 911907995}
   - component: {fileID: 911907994}
   - component: {fileID: 911907998}
+  - component: {fileID: 911907999}
   m_Layer: 5
   m_Name: StoreUI
   m_TagString: Untagged
@@ -1502,6 +1503,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c01c5c2b3182c44bf902334a51f119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &911907999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911907993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe846ff11cb5ca4ab36078c639b3bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &936935325
