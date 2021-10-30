@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         GameObject Target = collision.gameObject;
         if (Target.tag == "Robot") {
-            scoreScript.ChangeScore();
+            scoreScript.ChangeScore(1f);
             gameCanvasScript.ShowKillInfo();
             Destroy(Target);
             DestroyBullet();

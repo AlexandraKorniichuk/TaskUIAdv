@@ -14,8 +14,8 @@ public class Score : MonoBehaviour {
     private void Start() {
         scoreText.ChangeScoreText(score);
     }
-    public void ChangeScore() {
-        score++;
+    public void ChangeScore(float numberOfChangingScore) {
+        score += numberOfChangingScore;
         scoreText.ChangeScoreText(score);
     }
 
