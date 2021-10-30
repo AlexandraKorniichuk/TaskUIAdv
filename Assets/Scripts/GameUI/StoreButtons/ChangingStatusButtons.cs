@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ChangingCircleButtons : MonoBehaviour {
+public class ChangingStatusButtons : MonoBehaviour {
     public GameObject notSelectedButton;
     public GameObject selectedButton;
     public GameObject bulletPrefab;
@@ -12,10 +12,13 @@ public class ChangingCircleButtons : MonoBehaviour {
     public void ChangeButton() {
         if (notSelectedButton.activeSelf)
             TurnOnButton();
+        else
+            TurnOffButton();
     }
     public void TurnOnButton() {
 
-        notSelectedButton.SetActive(false);
-        selectedButton.SetActive(true);
+    }
+    public void TurnOffButton() {
+
     }
 }

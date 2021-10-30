@@ -11,7 +11,7 @@ public class Bot : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         GameObject Target = collision.gameObject;
         if (Target == player) {
-            healthScript.ReceiveDamage(damage);
+            healthScript?.ReceiveDamage(damage);
             DestroyRobot();
         }
     }
