@@ -9,12 +9,12 @@ public class Health : MonoBehaviour {
     private void Start() {
         healthText = GetComponent<HealthText>();
         currentHealth = MaxHealth;
-        healthText.ChangeHealthText(currentHealth);
+        healthText?.ChangeHealthText(currentHealth);
     }
 
     public void ReceiveDamage(float incomingDamage) {
         currentHealth -= incomingDamage;
-        healthText.ChangeHealthText(currentHealth);
+        healthText?.ChangeHealthText(currentHealth);
         if (currentHealth <= 0) {
             Die();
         }

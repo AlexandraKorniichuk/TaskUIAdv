@@ -7,7 +7,6 @@ public class MouseLook : MonoBehaviour {
     public bool freezeCamera = false;
     public GameObject storeUI;
     public GameObject gameUI;
-    private Store storeScript;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
